@@ -1,0 +1,39 @@
+ 
+ 
+ <!-- Navigation -->
+ <div class="navi">
+    <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+        <div class="container">
+            <a href="/" class="navbar-brand d-flex w-50 me-auto text-success">Application Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+                <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link {% if nbar == 'index' %}active{% endif %}" aria-current="page" href="/">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if nbar == 'request' %}active{% endif %}"href="{% url 'request' %}"> <span {% if request.resolver_match.view_name == 'request' %}class='active'{% endif %} >Request</span><span class="sr-only">(current)</span> </a>
+                    </li> 
+                           
+                         {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if nbar == 'dashboard' %}active{% endif %}" aria-current="page"  href="{% url 'dashboard' %}">Dashboard</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link {% if nbar == 'logout' %}active{% endif %}" href="{% url 'user_logout' %}">Log out</a>
+                            </li>  
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if nbar == 'login' %}active{% endif %}" href="{% url 'logi' %}">Login</a>
+                            </li> 
+                            {% endif %}      
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--navigation ends-->
+       
+  

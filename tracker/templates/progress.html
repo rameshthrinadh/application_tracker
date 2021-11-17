@@ -1,0 +1,51 @@
+
+{% extends 'layouts/base.html' %}
+{% block title %} Progress {% endblock %} 
+      {% block content %}
+
+<div class="container m-t-200">
+<div class="row my-5 ">
+    <div class="col">
+    <div class="card border-success border-rounded py-3">
+        <div class="card-body my-5">
+            <div class="card-title  h1">Progress </div>
+            <div class="card-text mb-5">
+                {% if progress >= 0 %}
+                <div class="wizard-progress">
+                    <div class="step  {% if progress >= 1 %} complete {% elif progress == 0 %} in-progress{% endif %}">
+                        Request
+                        <div class="node"></div>
+                    </div>
+                    <div class="step  {% if progress >= 2 %}complete {% elif progress == 1 %} in-progress{% endif %}">
+                        Approved
+                        <div class="node"></div>
+                    </div>
+                    <div class="step  {% if progress  >= 3 %}complete {% elif progress == 2 %} in-progress{% endif %}">
+                       {% if type == 'Study Certificate' %} Waiting for Administration {% elif type == 'Marks List' %} Waiting for Examcell {% endif %}
+                        <div class="node"></div>
+                    </div>
+                    <div class="step  {% if progress  >= 4 %}complete {% elif progress == 3 %} in-progress{% endif %}">
+                        completed
+                        <div class="node"></div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="wizard-progress">
+                    <div class="step  complete">
+                        Request
+                        <div class="node  bg-danger"></div>
+                    </div>
+                    <div class="step">
+                        Declined
+                        <div class="node  bg-danger"></div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

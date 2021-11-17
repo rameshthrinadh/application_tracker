@@ -1,0 +1,25 @@
+
+{% extends 'layouts/base.html' %}
+{% block title %} Application Number {% endblock %} 
+{% load static %}
+      {% block content %}
+
+      <center> 
+        <div class="container mx-5">
+       <div class="card m-5 p-5">
+  <div class="card-header bg-success mx-5">
+    Application number
+  </div>
+  <div class="card-body my-3">
+    <h5 class="card-title my-3"> Your applications number</h5>
+    <p class="card-text my-3">Here is the applications number of your request :- <span class="display-4 text-warning p-3 my-2">{{ number }} </span><br><br><br><br> </p>
+        <footer class="blockquote-footer text-danger"> Please save this number inorder to check the <cite title="Source Title">status of application progress</cite></footer>
+
+    <a href="/" class="btn btn-outline-success my-3">Go to Home</a>
+  </div>
+</div>
+</div>
+      </center>
+
+
+    {% endblock %}

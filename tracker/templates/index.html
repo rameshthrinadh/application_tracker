@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+{% block title %} Home {% endblock %} 
+      {% block content %}
+
+      <div  class="container ">
+           <div class="container-sm my-3 py-5">
+               <div class="row">
+                    <form class=" validate-form" action="check" method="post">
+                        {% csrf_token %}
+                        <span class="contact1-form-title">
+                           <u>Application Progress</u>
+                        </span>
+                    <div class="wrap-input1 validate-input mx-5 " data-validate = "Number is required">
+                        <input class="input1 col-sm-9 my-1 mx-5 d-flex justify-content-center" type="text" name="number" required >
+                        <label for="" class="form__label my-1 mx-5 ">Application Number</label>
+                    </div>
+                    
+                    <div class="container-contact1-form-btn">
+                        <button class="contact1-form-btn s">
+                            <span>
+                                Status
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                    </form>
+                </div>
+                
+</div>
+</div>
+
+
+       {% endblock %}
+        
+       
+  
